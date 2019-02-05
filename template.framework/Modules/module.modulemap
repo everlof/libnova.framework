@@ -1,0 +1,6 @@
+framework module libnova {
+  umbrella header "libnova.h"
+
+  export *
+  module * { export * }
+}

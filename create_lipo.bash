@@ -3,12 +3,19 @@
 # Using cmake from here:
 # https://github.com/leetal/ios-cmake
 
+# Very very important:
+# https://gitlab.kitware.com/cmake/community/wikis/doc/cmake/RPATH-handling
+
+# Also rather important:
+# https://gitlab.kitware.com/cmake/cmake/issues/16589
+
 if [ ! -f "${LIBNOVA_ZIP}" ] ; then
     echo "LIBNOVA_ZIP not set or doesn't point to a file"
     exit 1
 fi
 
-declare -a PLATFORMS=("SIMULATOR64" "OS" "OS64" "TVOS" "SIMULATOR_TVOS" "WATCHOS" "SIMULATOR_WATCHOS")
+#declare -a PLATFORMS=("SIMULATOR64" "OS" "OS64" "TVOS" "SIMULATOR_TVOS" "WATCHOS" "SIMULATOR_WATCHOS")
+declare -a PLATFORMS=("SIMULATOR64" "OS64")
 
 for i in "${PLATFORMS[@]}"
 do
@@ -27,5 +34,12 @@ do
    make libnova
    popd
    popd
-   find . -name liblibnova.dylib -exec mv '{}' "${target}" \;
+   find . -name liblibnova.dylib -exec cp '{}' "${target}" \;
+   install_name_tool -id @rpath/libnova.framework/libnova "${target}"
+   otool -D "${target}"
 done
+
+rm -rf libnova.framework
+cp -r template.framework/ libnova.framework
+find libnova-libnova-edbf65abe27ef1a2520eb9e839daaf58f15a6941/src/libnova -name "*.h" -exec cp -v '{}' libnova.framework/Headers/ \;
+lipo -create *.dylib -output libnova.framework/libnova
