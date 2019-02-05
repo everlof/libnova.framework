@@ -33,6 +33,10 @@ brew install libtool
 
 - [Finding out how to concstruct the rpath](https://developer.apple.com/library/archive/technotes/tn2435/_index.html)
 
+## Resources
+
+[ZIP-file source](https://sourceforge.net/p/libnova/libnova/ci/v0.16/tree/) or [direct link](https://sourceforge.net/code-snapshots/git/l/li/libnova/libnova.git/libnova-libnova-edbf65abe27ef1a2520eb9e839daaf58f15a6941.zip).
+
 ## Credit
 
 All credit to the creators libNova-Team Liam Girdwood, Juan Carlos Remis and Petr Kubanek.
