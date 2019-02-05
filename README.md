@@ -1,6 +1,6 @@
 # libnova
 
-A cooca-framework of `libnova` that can be found on [sourceforge](http://libnova.sourceforge.net/).
+A cooca-framework of `libnova` that can be found on [sourceforge](http://libnova.sourceforge.net/). Using the bash-script provided in this repo you can compile for the following architectures: `x86_64`, `armv7`, `armv7s`, `armv7k`, `arm64_32`, `arm64` and `arm64e`.
 
 ### Usage
 
