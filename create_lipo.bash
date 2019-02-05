@@ -1,11 +1,6 @@
 #!/bin/bash -x
 
-
-
-if [ ! -f "${LIBNOVA_ZIP}" ] ; then
-    echo "LIBNOVA_ZIP not set or doesn't point to a file"
-    exit 1
-fi
+LIBNOVA_ZIP=libnova-libnova-edbf65abe27ef1a2520eb9e839daaf58f15a6941.zip
 
 # All architectures: (however this will compile multiple times for the same architechture)
 #declare -a PLATFORMS=("SIMULATOR64" "OS" "OS64" "TVOS" "SIMULATOR_TVOS" "WATCHOS" "SIMULATOR_WATCHOS")
