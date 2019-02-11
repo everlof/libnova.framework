@@ -17,6 +17,7 @@ brew install unzip
 brew install autoconf
 brew install automake
 brew install libtool
+brew install cmake
 
 # Then just run create_lipo.bash, which will create: template.framework
 ./create_lipo.bash
